@@ -1,4 +1,4 @@
-package Arrays.demo;
+package Arrays.labs;
 
 public class ArrayDemoTwo {
     public static void main(String[] args) {
