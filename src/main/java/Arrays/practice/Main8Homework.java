@@ -19,10 +19,10 @@ public class Main8Homework {
         //System.out.println(Arrays.toString(words)); //Print array words as a string
 
 
-        for (int i = words.length - 1; i < sentenceLength; i++) { //start at array words, if index is less than the length of sentence then continue
-           words = sentence.split(" ,");
-            System.out.println(Arrays.toString(words));
+        for (int i = 0; i < sentenceLength; i++) { //start at int = 0 , if index is less than the length of sentence then continue
+           words = sentence.split(" ,"); //split sentence and place into array words
         }
+        System.out.println(Arrays.toString(words)); //print array words as a string
 
     }
 
