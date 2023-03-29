@@ -21,4 +21,32 @@ public class SummingAllElements {
         }
     }
 
+    public static void findBiggestNumber(){
+        int[] arr = {25, 0, 2, 4, 6, 8, 10};
+        int maxVal = Integer.MIN_VALUE; //or 0
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > maxVal){
+                maxVal = arr[i];
+            }
+        }
+        System.out.println("Max element= " + maxVal);
+    }
+
+    public static void reverseOrder(){
+        Integer[] intArray = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+        //------Print array from first starting element----
+        System.out.println("Original Array: ");
+        for (int i : intArray){
+            System.out.println(i + " ");
+        };
+        System.out.println();
+        //-------print array starting from last element------
+        System.out.println("Original array printed in reverse order:");
+        for(int i = intArray.length - 1; i >= 0; i-- ){
+            System.out.println(intArray[i] + " ");
+        }
+    }
+
+
+
 }
