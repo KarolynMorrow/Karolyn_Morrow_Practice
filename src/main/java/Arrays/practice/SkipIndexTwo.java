@@ -8,5 +8,10 @@ public class SkipIndexTwo {
     public static void main(String[] args) {
         int[] intArr = {12, 8, 25, 19, 2};
 
+        for(int i = 0; i < intArr.length; i++){
+            System.out.println(intArr[i]);
+
+        }
+
     }
 }
