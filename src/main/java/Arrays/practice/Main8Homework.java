@@ -26,7 +26,6 @@ public class Main8Homework {
         //find a way to only take words that are duplicated and put only one instance of them into array uniqueWords
 
 
-
         System.out.println(Arrays.toString(uniqueWords)); //print array uniqueWords as a string
 
 
@@ -36,7 +35,7 @@ public class Main8Homework {
         for (int i = 0; i < sentenceLength; i++) { //Moving through the array start at int = 0 , if index is less than the length of sentence then continue
             int counter = 0;
             //System.out.println();
-            for (int j = 0; j < wordsArrayLength ; j++) { //loop through array and add counting each occurrence
+            for (int j = 0; j < wordsArrayLength; j++) { //loop through array and add counting each occurrence
                 if (words[i].equals(uniqueWords[j])) { //if index in words array equals index in uniqueWords array
 
                     counter++; //add how many times it shows
@@ -58,21 +57,9 @@ public class Main8Homework {
     }
 
 
-    public static void marchTwentyNinthOptionalHW() {
-        /*Binary search method*/
-        int[] myIntArray = {5, 6, 2, 10, 20, 40};
-        boolean searchResult = binarySearch(myIntArray, 6);
-        System.out.println(searchResult);
-    }
 
-    private static boolean binarySearch(int[] myIntArray, int targetNumber) {
-        // TODO - write your code here
 
-        return false;
-
-    }
 }
-
 /*https://www.hackerrank.com/challenges/java-negative-subarray/problem*/
 
 
