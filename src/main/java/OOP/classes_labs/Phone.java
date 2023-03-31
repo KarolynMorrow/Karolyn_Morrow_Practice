@@ -1,4 +1,4 @@
-package OOP.classes_practice;
+package OOP.classes_labs;
 
 public class Phone {
     private String brand;
@@ -84,7 +84,7 @@ public class Phone {
 
     public static String phoneBreakdown(Phone phone) {
         System.out.println("The " + phone.getBrand()+ " phone has a screen size of " + phone.getScreenSize() +
-                " with a " + phone.getCameraType() + " camera and utilizes a " + phone.getChargerType());
+                " inches with a " + phone.getCameraType() + " camera and utilizes a " + phone.getChargerType());
         return null;
     }
 
