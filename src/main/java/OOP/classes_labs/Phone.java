@@ -1,6 +1,10 @@
 package OOP.classes_labs;
 
 public class Phone {
+
+    /*Reference types are initialized to null
+    * Numeric types are initialized to 0
+    * */
     private String brand;
     private boolean isTouchScreen;
     private boolean isSmartPhone;
@@ -66,7 +70,8 @@ public class Phone {
     }
 //------------------Class Methods------------------
 
-    /*Static methods do not rely on object information to run. They are given information to work with. Instance methods rely on information inside objects to run
+    /*Static methods do not rely on object information to run. They are given information to work with. Belongs to class not the object
+      Instance methods rely on information inside objects to run
     * Static methods -> Class.add(x,y);
       Instance methods => car.getNumberOfWheels();*/
 

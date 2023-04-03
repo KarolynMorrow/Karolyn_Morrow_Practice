@@ -37,9 +37,9 @@ Invoke “getCustomerInfo” method of the Customer object instance
         return price;
     }
 
-    //--Methods--
+    //---Methods---
 
-    public void printProductInfo(){
+    public void printProductInfo() {
         System.out.printf("Product information: %s - $%.2f\n", getProductName(), getPrice());
     }
 
