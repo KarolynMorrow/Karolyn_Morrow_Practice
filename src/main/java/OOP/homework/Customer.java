@@ -1,5 +1,7 @@
 package OOP.homework;
 
+import java.util.Arrays;
+
 public class Customer extends Product {
     /*
     April 1st-
@@ -19,7 +21,7 @@ public class Customer extends Product {
     private String customerName;
     private Address[] addresses;
     private String email;
-    private Product[] purchasedProducts;
+    private Product[] purchasedProducts = new Product[10];
 
 
     //-----Constructor-----
@@ -36,6 +38,10 @@ public class Customer extends Product {
         this.customerName = customerName;
         this.addresses = addresses;
         this.email = email;
+    }
+
+    public Customer() {
+
     }
 
     //-----Getters and/or Setters----
@@ -58,29 +64,51 @@ public class Customer extends Product {
 
 //-----Methods------
 
+    //Add purchasedItem(product) to Product[] without printing
     public void buyItems(Product product) {
-        int purchasedLength = purchasedProducts.length;
-        for (int i = 0; i < purchasedLength; i++) {
-            purchasedProducts = getPurchasedProducts();
+        int purchasedArrayLength = purchasedProducts.length;
+        for (int i = 0; i < purchasedArrayLength; i++) {
 
+            if(purchasedProducts[i] == null) {
+                break;
+            }
+            getPurchasedProducts();
         }
 
     }
 
+
+    /* METHOD WORKS FOR PRINTING CUSTOMER INFO AND ARRAY OF PRODUCTS NO SOUT NEEDED PRINTS WHOLE ARRAY
     public void getCustomerInfo() {
         System.out.println("Customer Information:\nCustomer Name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
         for (Product product : purchasedProducts) {
             product.printProductInfo();
         }
+    }*/
 
-    }
-/*Need to check what the current array is*/
-    public Address addAddress(Address address){
-        System.out.println("Customer Addresses: " + getAddresses());
-        for (Address customerAddress : addresses){
-            System.out.println(address);
+/*METHOD ALSO WORKS FOR PRINTING OUT BUT NEED TO USE A SOUT PRINTS UNTIL BREAK IS HIT*/
+    public String getCustomerInfo() {
+        String result = "Customer Information: \nCustomer name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nCustomer email: " + getEmail();
+
+        for (Product purchasedProduct : purchasedProducts) {
+            if (purchasedProduct == null) {
+                break;
+            }
+            result += "\nProduct Information: " + purchasedProduct.getProductName() + " - " + purchasedProduct.getPrice();
         }
-        return address ;
+
+        return result;
+    }
+
+
+    /*Need to check what the current array is*/
+    //Add FULL address to Address[]
+    public Address addAddress(Address address) {
+        System.out.println("Customer Addresses: " + getAddresses());
+        //for (Address customerAddress : addresses){
+        //  System.out.println(address);
+        //}
+        return address;
     }
 
 

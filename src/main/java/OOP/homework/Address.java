@@ -15,6 +15,7 @@ public class Address {
     The “Address” class should be in a sub-package */
 
     private boolean isPrimaryAddress;
+    //best practice in financial production byte decimal is preferred instead of double
     private double streetNumber;
     private String streetName;
     private String city;

@@ -43,5 +43,4 @@ Invoke “getCustomerInfo” method of the Customer object instance
         System.out.printf("Product information: %s - $%.2f\n", getProductName(), getPrice());
     }
 
-
 }
