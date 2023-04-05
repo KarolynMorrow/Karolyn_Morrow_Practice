@@ -1,7 +1,5 @@
 package OOP.homework;
 
-import java.util.Arrays;
-
 public class Customer extends Product {
     /*
     April 1st-
@@ -11,37 +9,32 @@ public class Customer extends Product {
     email
     Product[] purchasedProducts
     Add “getCustomerInfo” method to the Customer class, which displays detailed customer information along with the products s/he purchased
+
     April 3rd-
-    Add “Address[]” field to the “Customer” class
-    The “Address” class has the following fields:
-    boolean isPrimaryAddress
-    streetNumber
-    streetName
-    city
-    state
-    The “Address” class should be in a sub-package
-    Add “addAddress(Address address)” method to the “Customer” class
+
+    Add “addAddress(Address address)” method to add address to array the “Customer” class
     Modify “getCustomerInfo” method to display the addresses of the customer as well
     In the “main” method of the “MainHomeworkMarch31st” class, please add a new address to a “Customer” object using “addAddress(Address address)” method
     */
     private String customerName;
-    private String address;
+    private Address[] addresses;
     private String email;
-    public Product[] purchasedProducts;
+    private Product[] purchasedProducts;
+
 
     //-----Constructor-----
-    public Customer(String customerName, String address, String email, Product[] purchasedProducts) {
+    public Customer(String customerName, Address[] addresses, String email, Product[] purchasedProducts) {
         super();
         this.customerName = customerName;
-        this.address = address;
+        this.addresses = addresses;
         this.email = email;
         this.purchasedProducts = purchasedProducts;
     }
 
-    public Customer(String customerName, String address, String email) {
+    public Customer(String customerName, Address[] addresses, String email) {
         super();
         this.customerName = customerName;
-        this.address = address;
+        this.addresses = addresses;
         this.email = email;
     }
 
@@ -51,8 +44,8 @@ public class Customer extends Product {
         return customerName;
     }
 
-    public String getAddress() {
-        return address;
+    public Address[] getAddresses() {
+        return addresses;
     }
 
     public String getEmail() {
@@ -75,11 +68,19 @@ public class Customer extends Product {
     }
 
     public void getCustomerInfo() {
-        System.out.println("Customer Information:\nCustomer Name: " + getCustomerName() + "\nCustomer address: " + getAddress() + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
+        System.out.println("Customer Information:\nCustomer Name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
         for (Product product : purchasedProducts) {
             product.printProductInfo();
         }
 
+    }
+/*Need to check what the current array is*/
+    public Address addAddress(Address address){
+        System.out.println("Customer Addresses: " + getAddresses());
+        for (Address customerAddress : addresses){
+            System.out.println(address);
+        }
+        return address ;
     }
 
 
