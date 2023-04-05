@@ -78,15 +78,18 @@ public class Customer extends Product {
     }
 
 
-    /* METHOD WORKS FOR PRINTING CUSTOMER INFO AND ARRAY OF PRODUCTS NO SOUT NEEDED PRINTS WHOLE ARRAY
+    /* METHOD WORKS FOR PRINTING CUSTOMER INFO AND ARRAY OF PRODUCTS NO SOUT NEEDED PRINTS UNTIL BREAK IS HIT*/
     public void getCustomerInfo() {
         System.out.println("Customer Information:\nCustomer Name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
         for (Product product : purchasedProducts) {
+            if (product == null){
+                break;
+        }
             product.printProductInfo();
         }
-    }*/
+    }
 
-/*METHOD ALSO WORKS FOR PRINTING OUT BUT NEED TO USE A SOUT PRINTS UNTIL BREAK IS HIT*/
+/*METHOD ALSO WORKS FOR PRINTING OUT BUT NEED TO USE A SOUT PRINTS UNTIL BREAK IS HIT
     public String getCustomerInfo() {
         String result = "Customer Information: \nCustomer name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nCustomer email: " + getEmail();
 
@@ -99,7 +102,7 @@ public class Customer extends Product {
 
         return result;
     }
-
+*/
 
     /*Need to check what the current array is*/
     //Add FULL address to Address[]

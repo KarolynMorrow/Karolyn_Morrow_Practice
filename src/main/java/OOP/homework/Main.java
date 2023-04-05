@@ -9,7 +9,7 @@ public class Main {
         Customer karolyn = new Customer("Karolyn", new Address[]{}, "kmorrow@perscholas.com", new Product[]{computerMonitor});
 
         karolyn.buyItems(playStation5);
-        System.out.println(karolyn.getCustomerInfo());
+        karolyn.getCustomerInfo();
 
 
 
