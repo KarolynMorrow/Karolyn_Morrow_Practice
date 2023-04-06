@@ -1,4 +1,4 @@
-package OOP.classes_labs;
+package OOP.labs.classes_labs;
 
 public class StudentRecord {
 /*

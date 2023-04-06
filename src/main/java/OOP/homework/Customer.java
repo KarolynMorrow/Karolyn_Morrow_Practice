@@ -24,7 +24,7 @@ public class Customer extends CustomerName {
     lastName
     Refactor affected code accordingly
     */
-    private Customer customerName;
+    private CustomerName name;
     private Address[] addresses = new Address[10];
     private String email;
     private Product[] purchasedProducts = new Product[10];
@@ -33,28 +33,17 @@ public class Customer extends CustomerName {
 
 
     //-----Constructor-----
-    public Customer(Customer customerName, Address[] addresses, String email, Product[] purchasedProducts) {
-        super();
-        this.customerName = customerName;
-        this.addresses = addresses;
-        this.email = email;
-        this.purchasedProducts = purchasedProducts;
-    }
-
-    public Customer(Customer customerName, Address[] addresses, String email) {
-        super();
-        this.customerName = customerName;
-        this.addresses = addresses;
-        this.email = email;
-    }
 
     public Customer() {
 
     }
 
-    public Customer(CustomerName customerName, Address address, String email, Product[] purchasedProducts) {
+    public Customer(CustomerName name, Address[] addresses, String email, Product[] purchasedProducts) {
+        this.name = name;
+        this.addresses = addresses;
+        this.email = email;
+        this.purchasedProducts = purchasedProducts;
     }
-
 //-----Methods------
 
     //Add purchasedItem(product) to Product[] without printing
@@ -69,41 +58,37 @@ public class Customer extends CustomerName {
 
 
     /* METHOD WORKS FOR PRINTING CUSTOMER INFO AND ARRAY OF PRODUCTS NO SOUT NEEDED PRINTS UNTIL BREAK IS HIT*/
-    public void getCustomerInfo() {
-        System.out.println("Customer Information:\nCustomer Name: " + getFullName()
-                + "\n" + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
-        for (Product product : purchasedProducts) {
-            if (product == null) {
+    public String getCustomerInfo() {
+        String result = name.getFullName() + " "
+                + "Email: " + email;
+
+        for (int i = 0; i < purchasedProducts.length; i++) {
+            if (purchasedProducts[i] == null) {
                 break;
             }
-            product.printProductInfo();
-        }
-    }
-
-    /*Need to check what the current array is*/
-    //Add FULL address to Address[]
-    public Address addAddress(Address address) {
-        Address[] newAddresses = new Address[addresses.length + 1];
-        for (int i = 0; i < addresses.length; i++) {
-            newAddresses[i] = this.addresses[i];
+            result += "\n"
+                    + " Product name = "
+                    + purchasedProducts[i].getProductName();
         }
 
-        newAddresses[addresses.length] = address;
-        this.addresses = newAddresses;
+        for (int ii = 0; ii < addresses.length; ii++) {
+            if (addresses[ii] == null) {
+                break;
+            }
+            result += "\n"
+                    + " Address = "
+                    + addresses[ii].getStreetNumber() + " "
+                    + addresses[ii].getCity() + " ";
+        }
 
-        return address;
+        return result;
     }
 
-    /*
-    public void addAddress(Address address){
-        addresses[currentAddressIndex++] = address;
-    }*/
 
+    public CustomerName returnFullName(){
 
-    public String returnFullName(){
-        return customerName.getFullName();
+        return null;
     }
-
 
     //-----Getters and/or Setters----
 
@@ -123,12 +108,12 @@ public class Customer extends CustomerName {
         return purchasedProducts;
     }
 
-    public void setCustomerName(Customer customerName) {
-        this.customerName = customerName;
+    public CustomerName getName() {
+        return name;
     }
 
-    public Customer getCustomerName() {
-        return customerName;
+    public void setName(CustomerName name) {
+        this.name = name;
     }
 
     public void setEmail(String email) {

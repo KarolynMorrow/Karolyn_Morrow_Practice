@@ -20,7 +20,11 @@ public class CustomerName {
 
     //---Methods---
 
-
+    public String getFullName(){
+        String result = ("Customer Name: " + firstName + " " + middleName + " " +
+                lastName) + "\n";
+        return result;
+    }
 
     //---Getters and Setters---
 
@@ -48,7 +52,6 @@ public class CustomerName {
         this.middleName = middleName;
     }
 
-    public String getFullName(){
-        return getFirstName() + getMiddleName() + getLastName();
-    }
+
+
 }
