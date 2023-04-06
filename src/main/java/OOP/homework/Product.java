@@ -27,7 +27,13 @@ Invoke “getCustomerInfo” method of the Customer object instance
 
     }
 
-    //--Getters and/or Setters
+
+    //---Methods---
+
+    public void printProductInfo() {
+        System.out.printf("Product information: %s - $%.2f\n", getProductName(), getPrice());
+    }
+//--Getters and/or Setters
 
     public String getProductName() {
         return productName;
@@ -36,11 +42,4 @@ Invoke “getCustomerInfo” method of the Customer object instance
     public double getPrice() {
         return price;
     }
-
-    //---Methods---
-
-    public void printProductInfo() {
-        System.out.printf("Product information: %s - $%.2f\n", getProductName(), getPrice());
-    }
-
 }

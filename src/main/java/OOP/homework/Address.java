@@ -2,7 +2,7 @@ package OOP.homework;
 
 import java.util.Scanner;
 
-public class Address {
+public class Address extends Product {
 
     /*April 3rd-
     Add “Address[]” field to the “Customer” class
@@ -16,12 +16,46 @@ public class Address {
 
     private boolean isPrimaryAddress;
     //best practice in financial production byte decimal is preferred instead of double
-    private double streetNumber;
+    private int streetNumber;
     private String streetName;
     private String city;
     private String state;
 
 
+    public Address(boolean isPrimaryAddress, int streetNumber, String streetName, String city, String state) {
+        this.isPrimaryAddress = isPrimaryAddress;
+        this.streetNumber = streetNumber;
+        this.streetName = streetName;
+        this.city = city;
+        this.state = state;
+    }
+    public Address(){
+
+    }
+
+//--Methods--
+
+//    public void getNewAddress(){
+//        Scanner input = new Scanner(System.in);
+//        String question = input.nextLine();
+//        String newAddress = new Address[];
+//        System.out.println("Do you have a new address to input: y/n ");
+//        if (question == "y"){
+//            System.out.println("Please type in new address: ");
+//            streetNumber = input.nextDouble();
+//            input.next();
+//            streetName = input.nextLine();
+//            input.next();
+//            city = input.nextLine();
+//            input.next();
+//            state = input.nextLine();
+//            input.next();
+//        } else {
+//            System.out.println("No address on file");
+//        }
+//    }
+
+    //--Getters and Setters
     public boolean isPrimaryAddress() {
         return isPrimaryAddress;
     }
@@ -34,7 +68,7 @@ public class Address {
         return streetNumber;
     }
 
-    public void setStreetNumber(double streetNumber) {
+    public void setStreetNumber(int streetNumber) {
         this.streetNumber = streetNumber;
     }
 
@@ -62,24 +96,5 @@ public class Address {
         this.state = state;
     }
 
-//    public void getNewAddress(){
-//        Scanner input = new Scanner(System.in);
-//        String question = input.nextLine();
-//        String newAddress = new Address[];
-//        System.out.println("Do you have a new address to input: y/n ");
-//        if (question == "y"){
-//            System.out.println("Please type in new address: ");
-//            streetNumber = input.nextDouble();
-//            input.next();
-//            streetName = input.nextLine();
-//            input.next();
-//            city = input.nextLine();
-//            input.next();
-//            state = input.nextLine();
-//            input.next();
-//        } else {
-//            System.out.println("No address on file");
-//        }
-//    }
 
 }
