@@ -1,8 +1,6 @@
 package OOP.homework;
 
-import java.util.Arrays;
-
-public class Customer extends Address {
+public class Customer extends CustomerName {
     /*
     April 1st-
     Create “Customer” class with the following fields - choose appropriate data types - and appropriate methods
@@ -17,8 +15,16 @@ public class Customer extends Address {
     Add “addAddress(Address address)” method to add address to array the “Customer” class
     Modify “getCustomerInfo” method to display the addresses of the customer as well
     In the “main” method of the “MainHomeworkMarch31st” class, please add a new address to a “Customer” object using “addAddress(Address address)” method
+
+    April 5th-
+    Remove existing “customerName” field (and its getter and setter) from the Customer class
+    Create “CustomerName” class with the following fields:
+    firstName
+    middleName
+    lastName
+    Refactor affected code accordingly
     */
-    private String customerName;
+    private Customer customerName;
     private Address[] addresses = new Address[10];
     private String email;
     private Product[] purchasedProducts = new Product[10];
@@ -27,7 +33,7 @@ public class Customer extends Address {
 
 
     //-----Constructor-----
-    public Customer(String customerName, Address[] addresses, String email, Product[] purchasedProducts) {
+    public Customer(Customer customerName, Address[] addresses, String email, Product[] purchasedProducts) {
         super();
         this.customerName = customerName;
         this.addresses = addresses;
@@ -35,7 +41,7 @@ public class Customer extends Address {
         this.purchasedProducts = purchasedProducts;
     }
 
-    public Customer(String customerName, Address[] addresses, String email) {
+    public Customer(Customer customerName, Address[] addresses, String email) {
         super();
         this.customerName = customerName;
         this.addresses = addresses;
@@ -44,6 +50,9 @@ public class Customer extends Address {
 
     public Customer() {
 
+    }
+
+    public Customer(CustomerName customerName, Address address, String email, Product[] purchasedProducts) {
     }
 
 //-----Methods------
@@ -61,7 +70,8 @@ public class Customer extends Address {
 
     /* METHOD WORKS FOR PRINTING CUSTOMER INFO AND ARRAY OF PRODUCTS NO SOUT NEEDED PRINTS UNTIL BREAK IS HIT*/
     public void getCustomerInfo() {
-        System.out.println("Customer Information:\nCustomer Name: " + getCustomerName() + "\n" + printAddress() + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
+        System.out.println("Customer Information:\nCustomer Name: " + getFullName()
+                + "\n" + "\nEmail address: " + getEmail() + "\nProducts purchased: ");
         for (Product product : purchasedProducts) {
             if (product == null) {
                 break;
@@ -69,21 +79,6 @@ public class Customer extends Address {
             product.printProductInfo();
         }
     }
-
-/*METHOD ALSO WORKS FOR PRINTING OUT BUT NEED TO USE A SOUT PRINTS UNTIL BREAK IS HIT
-    public String getCustomerInfo() {
-        String result = "Customer Information: \nCustomer name: " + getCustomerName() + "\nCustomer address: " + getAddresses() + "\nCustomer email: " + getEmail();
-
-        for (Product purchasedProduct : purchasedProducts) {
-            if (purchasedProduct == null) {
-                break;
-            }
-            result += "\nProduct Information: " + purchasedProduct.getProductName() + " - " + purchasedProduct.getPrice();
-        }
-
-        return result;
-    }
-*/
 
     /*Need to check what the current array is*/
     //Add FULL address to Address[]
@@ -96,12 +91,7 @@ public class Customer extends Address {
         newAddresses[addresses.length] = address;
         this.addresses = newAddresses;
 
-
         return address;
-    }
-
-    public String printAddress(){
-        return getStreetNumber() + " " + getStreetName() + " " + getCity() + " " + getState();
     }
 
     /*
@@ -110,14 +100,15 @@ public class Customer extends Address {
     }*/
 
 
+    public String returnFullName(){
+        return customerName.getFullName();
+    }
+
+
     //-----Getters and/or Setters----
 
     public void setAddresses(Address[] addresses) {
         this.addresses = addresses;
-    }
-
-    public String getCustomerName() {
-        return customerName;
     }
 
     public Address[] getAddresses() {
@@ -130,5 +121,21 @@ public class Customer extends Address {
 
     public Product[] getPurchasedProducts() {
         return purchasedProducts;
+    }
+
+    public void setCustomerName(Customer customerName) {
+        this.customerName = customerName;
+    }
+
+    public Customer getCustomerName() {
+        return customerName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPurchasedProducts(Product[] purchasedProducts) {
+        this.purchasedProducts = purchasedProducts;
     }
 }

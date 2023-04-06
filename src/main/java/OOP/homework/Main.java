@@ -11,10 +11,10 @@ public class Main {
 
         Address address1 = new Address(true, 0123, "Yo Mommas House", "Lancaster", "SC");
 
+        CustomerName firstCustomer = new CustomerName("Karolyn", "B", "Morrow");
 
-        Customer karolyn = new Customer("Karolyn", new Address[]{address1}, "kmorrow@perscholas.com", new Product[]{playStation5, computerMonitor});
 
-        karolyn.buyItems(playStation5);
+        Customer karolyn = new Customer(firstCustomer, address1, "kmorrow@perscholas.com", new Product[]{playStation5, computerMonitor});
 
 
         /*karolyn.addAddress(address1);*/
@@ -23,5 +23,6 @@ public class Main {
         karolyn.getCustomerInfo();
 
         System.out.println(address1);
+        System.out.println(firstCustomer);
     }
 }
