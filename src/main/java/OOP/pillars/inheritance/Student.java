@@ -8,6 +8,9 @@ public class Student extends Person{
        super(name, age);
        this.grade = grade;
    }
+   public Student(){
+
+   }
    @Override
     public void walk(){
         System.out.println(getName() + " walks like a student");

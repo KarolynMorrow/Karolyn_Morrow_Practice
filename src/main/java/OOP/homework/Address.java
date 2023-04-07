@@ -35,25 +35,6 @@ public class Address extends Product {
 
 //--Methods--
 
-//    public void getNewAddress(){
-//        Scanner input = new Scanner(System.in);
-//        String question = input.nextLine();
-//        String newAddress = new Address[];
-//        System.out.println("Do you have a new address to input: y/n ");
-//        if (question == "y"){
-//            System.out.println("Please type in new address: ");
-//            streetNumber = input.nextDouble();
-//            input.next();
-//            streetName = input.nextLine();
-//            input.next();
-//            city = input.nextLine();
-//            input.next();
-//            state = input.nextLine();
-//            input.next();
-//        } else {
-//            System.out.println("No address on file");
-//        }
-//    }
 
     //--Getters and Setters
     public boolean isPrimaryAddress() {
@@ -64,7 +45,7 @@ public class Address extends Product {
         isPrimaryAddress = primaryAddress;
     }
 
-    public double getStreetNumber() {
+    public int getStreetNumber() {
         return streetNumber;
     }
 

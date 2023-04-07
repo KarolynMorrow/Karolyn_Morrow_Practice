@@ -48,12 +48,16 @@ public class Customer extends CustomerName {
 
     //Add purchasedItem(product) to Product[] without printing
     public void buyItems(Product product) {
-        for (int i = 0; i < purchasedProducts.length; i++) {
+       /* for (int i = 0; i < purchasedProducts.length; i++) {
             if (purchasedProducts[i] == null) {
                 break;
             }
-            getPurchasedProducts();
-        }
+            purchasedProducts[i] = product;
+         }
+            */
+
+            purchasedProducts[currentProductIndex++] = product;
+
     }
 
 
@@ -67,8 +71,8 @@ public class Customer extends CustomerName {
                 break;
             }
             result += "\n"
-                    + " Product name = "
-                    + purchasedProducts[i].getProductName();
+                    + " Product Details: "
+                    + purchasedProducts[i].getProductName() + "- $" + purchasedProducts[i].getPrice();
         }
 
         for (int ii = 0; ii < addresses.length; ii++) {
@@ -76,9 +80,9 @@ public class Customer extends CustomerName {
                 break;
             }
             result += "\n"
-                    + " Address = "
-                    + addresses[ii].getStreetNumber() + " "
-                    + addresses[ii].getCity() + " ";
+                    + " Address: "
+                    + addresses[ii].getStreetNumber() + " " + addresses[ii].getStreetName() + " "
+                    + addresses[ii].getCity() + " " + addresses[ii].getState();
         }
 
         return result;

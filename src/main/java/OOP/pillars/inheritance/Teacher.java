@@ -9,6 +9,9 @@ public class Teacher extends Person {
         this.subject = subject;
 
     }
+    public Teacher(){
+
+    }
     @Override
     public void walk(){
         System.out.println(getName() + " walks like a teacher");
