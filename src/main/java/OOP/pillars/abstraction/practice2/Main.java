@@ -1,4 +1,8 @@
-package OOP.pillars.abstraction;
+package OOP.pillars.abstraction.practice2;
+
+import OOP.pillars.abstraction.practice2.Circle;
+import OOP.pillars.abstraction.practice2.Rectangle;
+import OOP.pillars.abstraction.practice2.Shape;
 
 public class Main {
     public static void main(String[] args) {

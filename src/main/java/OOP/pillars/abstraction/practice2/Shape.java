@@ -1,4 +1,4 @@
-package OOP.pillars.abstraction;
+package OOP.pillars.abstraction.practice2;
 
 public abstract class Shape {
 

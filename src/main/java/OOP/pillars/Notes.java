@@ -17,7 +17,7 @@ public class Notes {
     - An abstract class can have instance variables and concrete methods, while an interface cannot have either.
     - A class can extend only one abstract class, but it can implement multiple interfaces.
     - Abstract classes are used to create a hierarchy of related classes, while interfaces are used to define a contract for unrelated classes.
-    ***   Are there any common implementation that every subclass should inherit: If so use Abstract if not use Interface
+    ***   Are there any common implementation that every subclass should inherit: If so use Abstract if not use Interface ***
 
     * Final classes cannot be extended *public final class ClassName(){}* Examples are wrapper classes (Integer class) and String class
     * Final methods cannot be overridden *public final [returnType] [methodName] [

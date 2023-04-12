@@ -1,6 +1,8 @@
-package OOP.pillars.abstraction;
+package OOP.pillars.abstraction.practice2;
 
-public class Rectangle extends Shape{
+import OOP.pillars.abstraction.practice2.Shape;
+
+public class Rectangle extends Shape {
 
         private double width;
         private double height;
