@@ -13,7 +13,15 @@ public class HourlyEmployee extends Employee {
         this.hourlyRate = hourlyRate;
     }
 
+
+
     //--Methods
+
+    @Override
+    public double computeMonthlyCompensation() {
+        return hourlyRate * hoursWorkedPerMonth;
+    }
+
     //--Getter and Setter
     public int getHoursWorkedPerMonth() {
         return hoursWorkedPerMonth;

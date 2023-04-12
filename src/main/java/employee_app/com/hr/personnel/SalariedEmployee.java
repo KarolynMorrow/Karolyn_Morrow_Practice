@@ -13,6 +13,13 @@ public class SalariedEmployee extends Employee {
     }
 
     //--Methods
+
+
+    @Override
+    public double computeMonthlyCompensation() {
+        return monthlySalary;
+    }
+
     //--Getter and Setter
     public double getMonthlySalary() {
         return monthlySalary;

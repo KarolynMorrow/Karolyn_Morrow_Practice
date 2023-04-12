@@ -20,6 +20,8 @@ public class HRClient extends Deparment {
         int departmentInfo = deparment.letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked();
         System.out.printf("We have %d employee(s) working in the %s department at our %s location.\n", departmentInfo, deparment.getName(), deparment.getLocation());
 
+        deparment.computeDepartmentMonthlyTotalCompensation();
+
     }
 
 

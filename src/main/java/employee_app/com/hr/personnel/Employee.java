@@ -34,6 +34,10 @@ public class Employee {
 
     }
 
+    public double computeMonthlyCompensation(){
+        return 0.0;
+    }
+
 
     //---Getters and Setters
     public String getName() {
