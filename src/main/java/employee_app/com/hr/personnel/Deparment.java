@@ -45,10 +45,7 @@ public class Deparment {
         //and add it to totalCompensation
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
-                totalCompensation++ ;
-                break;
-            } else {
-                break;
+                totalCompensation += employees[i].computeMonthlyCompensation();
             }
         }
         return totalCompensation;
