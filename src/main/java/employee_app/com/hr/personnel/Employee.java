@@ -3,7 +3,7 @@ package employee_app.com.hr.personnel;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Employee {
+public abstract class Employee {
 
     private String name;
     private LocalDate hireDate;
@@ -16,9 +16,7 @@ public class Employee {
     }
 
     //---Methods---
-    public String getEmployeeInfo(){
-        return "Name= " + name + ", Hire date = " + hireDate;
-    }
+    public abstract String getEmployeeInfo();
 
     public String work(){
         return name + " worked";
@@ -34,9 +32,8 @@ public class Employee {
 
     }
 
-    public double computeMonthlyCompensation(){
-        return 0.0;
-    }
+    public abstract double computeMonthlyCompensation();
+
 
 
     //---Getters and Setters

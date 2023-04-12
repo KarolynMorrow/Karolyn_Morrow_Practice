@@ -16,6 +16,11 @@ public class SalariedEmployee extends Employee {
 
 
     @Override
+    public String getEmployeeInfo() {
+        return ("Name: " + getName() + " Hire Date(YYYY/MM/DD): " + getHireDate() + " Monthly Salary: " + monthlySalary);
+    }
+
+    @Override
     public double computeMonthlyCompensation() {
         return monthlySalary;
     }

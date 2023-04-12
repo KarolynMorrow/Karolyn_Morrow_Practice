@@ -18,6 +18,11 @@ public class HourlyEmployee extends Employee {
     //--Methods
 
     @Override
+    public String getEmployeeInfo() {
+        return ("Name = " + getName() + " Hire Date(YYYY/MM/DD): " + getHireDate() + " Hourly Pay Rate: " + getHourlyRate());
+    }
+
+    @Override
     public double computeMonthlyCompensation() {
         return hourlyRate * hoursWorkedPerMonth;
     }
