@@ -41,15 +41,17 @@ public class Deparment {
    //Compute total compensation of all employees in the Department
     public double computeDepartmentMonthlyTotalCompensation(){
         double totalCompensation = 0;
+        //Loop through the Employee[] until null, grab the compensation of each employee from the method computeMonthlyCompensation()
+        //and add it to totalCompensation
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
-                totalCompensation++;
+                totalCompensation++ ;
                 break;
             } else {
                 break;
             }
         }
-        return 0.0;
+        return totalCompensation;
     }
     //--Getter and Setter
 
