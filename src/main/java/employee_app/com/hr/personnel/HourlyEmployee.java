@@ -19,7 +19,7 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public String getEmployeeInfo() {
-        return ("Name = " + getName() + " Hire Date(YYYY/MM/DD): " + getHireDate() + " Hourly Pay Rate: " + getHourlyRate());
+        return ("Name: " + getName() + " Hire Date(YYYY/MM/DD): " + getHireDate() + " Hourly Pay Rate: " + getHourlyRate());
     }
 
     @Override
