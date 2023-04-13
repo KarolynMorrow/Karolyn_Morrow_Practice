@@ -21,19 +21,15 @@ public abstract class Employee {
     public String work(){
         return name + " worked";
     }
+    public abstract double computeMonthlyCompensation();
 
-    //If current year is 2022 and the year of hireDate is
-    //2020, it returns 2
+    //If current year is 2022 and the year of hireDate is 2020, it returns 2
     public int computeNumberOfYearsWorkedSinceHired(){
         LocalDate local = LocalDate.now();
         int currentYear = local.getYear();
-        int amountOfYears = currentYear - hireDate.getYear();
-        return amountOfYears;
+        return currentYear - hireDate.getYear();
 
     }
-
-    public abstract double computeMonthlyCompensation();
-
 
 
     //---Getters and Setters
