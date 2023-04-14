@@ -28,10 +28,10 @@ public class Deparment {
         //If employee object contains work() method - "worked" string add to employees worked
 
         int employeesWorked = 0;
-        for(int i = 0; i < employees.size(); i++){
-            if(employees.get(i) != null){
-                String worked = employees.get(i).work();
-                if (worked.contains("worked")){
+        for (Employee employee : employees) {
+            if (employee != null) {
+                String worked = employee.work();
+                if (worked.contains("worked")) {
                     employeesWorked++;
                 }
             }
@@ -45,9 +45,9 @@ public class Deparment {
         double totalCompensation = 0;
         //Loop through the Employee[] until null, grab the compensation of each employee from the method computeMonthlyCompensation()
         //and add it to totalCompensation
-        for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i) != null) {
-                totalCompensation += employees.get(i).computeMonthlyCompensation();
+        for (Employee employee : employees) {
+            if (employee != null) {
+                totalCompensation += employee.computeMonthlyCompensation();
             }
         }
         return totalCompensation;
