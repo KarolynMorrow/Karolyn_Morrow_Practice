@@ -1,11 +1,13 @@
 package employee_app.com.hr.personnel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Deparment {
     private String name;
     private String location;
-    static Employee[] employees = new Employee[100];
+    static List<Employee> employees = new ArrayList<>();
     int currentIndex = 0;
 
     //--Constructor
@@ -20,15 +22,15 @@ public class Deparment {
 
     //--Methods
     public void addEmployee(Employee employee){
-        employees[currentIndex++] = employee;
+        employees.add(employee);
     }
     public int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked(){
         //If employee object contains work() method - "worked" string add to employees worked
 
         int employeesWorked = 0;
-        for(int i = 0; i < employees.length; i++){
-            if(employees[i] != null){
-                String worked = employees[i].work();
+        for(int i = 0; i < employees.size(); i++){
+            if(employees.get(i) != null){
+                String worked = employees.get(i).work();
                 if (worked.contains("worked")){
                     employeesWorked++;
                 }
@@ -43,9 +45,9 @@ public class Deparment {
         double totalCompensation = 0;
         //Loop through the Employee[] until null, grab the compensation of each employee from the method computeMonthlyCompensation()
         //and add it to totalCompensation
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                totalCompensation += employees[i].computeMonthlyCompensation();
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i) != null) {
+                totalCompensation += employees.get(i).computeMonthlyCompensation();
             }
         }
         return totalCompensation;
@@ -68,11 +70,11 @@ public class Deparment {
         this.location = location;
     }
 
-    public Employee[] getEmployees() {
+    public static List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(Employee[] employees) {
-        this.employees = employees;
+    public static void setEmployees(List<Employee> employees) {
+        Deparment.employees = employees;
     }
 }
