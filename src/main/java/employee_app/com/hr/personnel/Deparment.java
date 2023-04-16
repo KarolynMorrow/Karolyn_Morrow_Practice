@@ -2,12 +2,13 @@ package employee_app.com.hr.personnel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Deparment {
     private String name;
     private String location;
-    static List<Employee> employees = new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
     int currentIndex = 0;
 
     //--Constructor
@@ -21,34 +22,33 @@ public class Deparment {
     }
 
     //--Methods
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) {
         employees.add(employee);
     }
-    public int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked(){
+
+    public int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked() {
         //If employee object contains work() method - "worked" string add to employees worked
 
         int employeesWorked = 0;
         for (Employee employee : employees) {
-            if (employee != null) {
-                String worked = employee.work();
-                if (worked.contains("worked")) {
-                    employeesWorked++;
-                }
+            String worked = employee.work();
+            if (worked.contains("worked")) {
+                employeesWorked++;
             }
 
         }
         return employeesWorked;
     }
 
-   //Compute total compensation of all employees in the Department
-    public double computeDepartmentMonthlyTotalCompensation(){
+    //Compute total compensation of all employees in the Department
+    public double computeDepartmentMonthlyTotalCompensation() {
         double totalCompensation = 0;
         //Loop through the Employee[] until null, grab the compensation of each employee from the method computeMonthlyCompensation()
         //and add it to totalCompensation
         for (Employee employee : employees) {
-            if (employee != null) {
-                totalCompensation += employee.computeMonthlyCompensation();
-            }
+
+            totalCompensation += employee.computeMonthlyCompensation();
+
         }
         return totalCompensation;
     }
@@ -70,11 +70,11 @@ public class Deparment {
         this.location = location;
     }
 
-    public static List<Employee> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public static void setEmployees(List<Employee> employees) {
-        Deparment.employees = employees;
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

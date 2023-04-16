@@ -1,0 +1,3 @@
+sushi  california roll  10.00  20
+ramen  noodles in soup  15.00  15
+takoyaki  fried squid  25.00  25
