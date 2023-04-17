@@ -68,5 +68,12 @@ public class Main {
 
         System.out.println("Size after addItem method with same itemName: " + newSystem.myItemsInHashMap.size());
 
+        System.out.println("\n");
+        System.out.println("------Testing removeItem() method------");
+        System.out.println("Size before removeItem method: " + newSystem.myItemsInHashMap.size());
+        newSystem.removeItem("ramen");
+        newSystem.printHashMap();
+        System.out.println("Size after removeItem method: " + newSystem.myItemsInHashMap.size());
+
     }
 }

@@ -56,6 +56,16 @@ public class MySystem {
         }
     }
 
+    public Item removeItem(String itemName){
+        if(getMyItemsInHashMap().containsKey(itemName)){
+            return getMyItemsInHashMap().remove(itemName);
+
+        }else{
+            return null;
+
+        }
+    }
+
 
     public Map<String, Item> getMyItemsInHashMap() {
         return myItemsInHashMap;
