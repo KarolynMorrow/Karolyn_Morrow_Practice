@@ -25,9 +25,9 @@ public class Notes {
     * void clear();
     *
     * //Collection Views
-    * public Set<K> keySet();
-    * public Collection<V> values();
-    * public Set<Map.Entry<K,V> entrySet();
+    * public Set<K> keySet(); Loop through each key
+    * public Collection<V> values(); Loop through each value
+    * public Set<Map.Entry<K,V> entrySet(); Loop through each entry
     *
     * //Interface for entrySet elements
     * public interface Entry {
