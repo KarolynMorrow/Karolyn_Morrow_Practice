@@ -38,7 +38,7 @@ public class Notes {
     *
     *
     *
-    * SortedMap - maintains mappings in ascending key order (ex dictionary or telephone directory)
+    * SortedMap - maintains mappings in ascending key order (ex dictionary or telephone directory) - A child map of Map
     * HashMap - Use if you want max speed and dont care about iteration order
     * TreeMap - Use when key-order collection is wanted/needed
     * LinkedHashMap - If you want both hashmap performance and insertion order iteration

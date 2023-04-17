@@ -13,6 +13,7 @@ public class Main {
             File file = new File("sample.txt");
             //Create scanner object to read file
             Scanner input = new Scanner(file);
+
             System.out.println("--------Testing reading sample.txt----------");
             System.out.printf("%-20s%-20s%-10s%-10s\n", "Name", "Description", "Price", "Available Quantity");
 
@@ -31,27 +32,41 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
+        System.out.println("\n");
         System.out.println("----Testing the constructor of Item class-----");
 
         Item onigiri = new Item("Onigiri", "tuna rice ball", 5.00, 10);
         System.out.printf("%-20s%-20s%-10.2f%-10d%-10d\n", onigiri.getItemName(), onigiri.getItemDescription(), onigiri.getPrice(), onigiri.getQuantity(), onigiri.getAvailableQuantity());
+        System.out.println("\n");
 
         System.out.println("----Testing in the constructor of MySystem class----");
         MySystem newSystem = new MySystem();
         //For each item stored in the "myItemHashMap"
         /*
-        * for (String item : myItemsInHashMap.keySet()) {
-        *       Item elementItem = myItemsHashMap.get(item);
-        *       System.out.printf("%-20s%-20s%-10.2f%-10d\n", elementItem.getItemName(), elementItem.getItemDescription(), elementItem.getPrice(), elementItem.getAvailableQuantity());
-        * */
+         * for (String item : myItemsInHashMap.keySet()) {
+         *       Item elementItem = myItemsHashMap.get(item);
+         *       System.out.printf("%-20s%-20s%-10.2f%-10d\n", elementItem.getItemName(), elementItem.getItemDescription(), elementItem.getPrice(), elementItem.getAvailableQuantity());
+         * */
 
-        for (String keyName: newSystem.getMyItemsInHashMap().keySet()) {
+        for (String keyName : newSystem.getMyItemsInHashMap().keySet()) {
             Item mapItem = newSystem.getMyItemsInHashMap().get(keyName);
             System.out.printf("%-20s%-20s%-10.2f%-10d\n",
                     mapItem.getItemName(), mapItem.getItemDescription(), mapItem.getPrice(),
                     mapItem.getAvailableQuantity());
         }
+
+        System.out.println("\n");
+
+        System.out.println("----Testing addItem() method----");
+        System.out.println("Size before addItem method: " + newSystem.myItemsInHashMap.size());
+        Item tamago = new Item("tamago", "egg omelette", 5.00, 40);
+        newSystem.addItem(tamago);
+        System.out.println("Size after addItem method: " + newSystem.myItemsInHashMap.size());
+        newSystem.printHashMap();
+        Item newSushi = new Item("sushi", "spicy california", 10.00, 5);
+        newSystem.addItem(newSushi);
+
+        System.out.println("Size after addItem method with same itemName: " + newSystem.myItemsInHashMap.size());
 
     }
 }
