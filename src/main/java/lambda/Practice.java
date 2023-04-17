@@ -1,4 +1,4 @@
-package iostream;
+package lambda;
 
 public class Practice {
 }
