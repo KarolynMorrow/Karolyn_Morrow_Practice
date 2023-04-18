@@ -36,10 +36,10 @@ public class MySystem {
         }
     }
 
-    public Map<String, Item> printHashMap(){
-        for(String keyName : getMyItemsInHashMap().keySet()){
+    public Map<String, Item> printHashMap() {
+        for (String keyName : getMyItemsInHashMap().keySet()) {
             Item item = getMyItemsInHashMap().get(keyName);
-            System.out.printf("%-20s%-20s%-10.2f%-10d\n",item.getItemName(), item.getItemDescription(), item.getPrice(), item.getAvailableQuantity() );
+            System.out.printf("%-20s%-20s%-10.2f%-10d\n", item.getItemName(), item.getItemDescription(), item.getPrice(), item.getAvailableQuantity());
         }
         return null;
     }
@@ -56,16 +56,35 @@ public class MySystem {
         }
     }
 
-    public Item removeItem(String itemName){
-        if(getMyItemsInHashMap().containsKey(itemName)){
+    public Item removeItem(String itemName) {
+        if (getMyItemsInHashMap().containsKey(itemName)) {
             return getMyItemsInHashMap().remove(itemName);
 
-        }else{
+        } else {
             return null;
 
         }
     }
 
+
+    public Item reduceAvailableQuantity(String itemName) {
+
+        Item item = null;
+        if (getMyItemsInHashMap().containsKey(itemName)) {
+            item = getMyItemsInHashMap().get(itemName);
+            int availableQuantity = item.getAvailableQuantity() - 1;
+            item.setAvailableQuantity(availableQuantity);
+            if (item.getAvailableQuantity() == 0) {
+                removeItem(itemName);
+                System.out.println("Sorry we are out of " + itemName);
+                return item;
+            } else {
+                return null;
+            }
+
+        }
+        return item;
+    }
 
     public Map<String, Item> getMyItemsInHashMap() {
         return myItemsInHashMap;

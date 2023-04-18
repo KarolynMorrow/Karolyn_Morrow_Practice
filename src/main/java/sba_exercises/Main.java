@@ -74,6 +74,15 @@ public class Main {
         newSystem.removeItem("ramen");
         newSystem.printHashMap();
         System.out.println("Size after removeItem method: " + newSystem.myItemsInHashMap.size());
+        System.out.println("\n");
+
+        System.out.println("-----Testing reduceAvailableQuantity() method-----");
+
+        newSystem.reduceAvailableQuantity("takoyaki");
+        newSystem.printHashMap();
+        System.out.println("----Testing 0 available items----");
+        newSystem.reduceAvailableQuantity("takoyaki");
+        newSystem.printHashMap();
 
     }
 }
