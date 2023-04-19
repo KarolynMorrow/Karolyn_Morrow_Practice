@@ -1,9 +1,11 @@
 package employee_app.com.hr.personnel;
 
+import employee_app.gov.irs.TaxPayer;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public abstract class Employee {
+public abstract class Employee implements TaxPayer {
 
     private String name;
     private LocalDate hireDate;

@@ -33,4 +33,9 @@ public class SalariedEmployee extends Employee {
     public void setMonthlySalary(double monthlySalary) {
         this.monthlySalary = monthlySalary;
     }
+
+    @Override
+    public double computeMonthlyTaxToPay() {
+        return SALARIED_TAX_RATE * computeMonthlyCompensation();
+    }
 }
