@@ -23,6 +23,10 @@ public class Main {
 
         newTeam.sendPlayerToMinorLeague(5);
 
+        System.out.println("---Transferred to a New Team---");
+        newTeam.transferPlayerToDifferentTeam(6, "Tottenham");
+        newTeam.transferPlayerToDifferentTeam(6, "Tottenham");
+
 
 
     }

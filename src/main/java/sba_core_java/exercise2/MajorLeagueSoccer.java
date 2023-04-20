@@ -36,4 +36,18 @@ public class MajorLeagueSoccer {
             break;
         }
     }
+
+    public void transferPlayerToDifferentTeam(int playerID, String destinationTeam){
+        int index = playerID - 1;
+        int playerIDInArray = playerNumberArray[index];
+        for (int i : playerNumberArray){
+            if(playerIDInArray != -1){
+                playerNumberArray[index] = -1;
+                System.out.println("Player " + playerID + " is transferred to " + destinationTeam + ".");
+            } else {
+                System.out.println("Player " + playerID + " is no longer available.");
+            }
+            break;
+        }
+    }
 }
